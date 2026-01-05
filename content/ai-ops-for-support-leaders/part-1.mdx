@@ -1,0 +1,233 @@
+---
+title: AI Ops for Support Leaders, Part 1
+description: Operating model for AI in Support.
+---
+
+AI ships fast. Support teams pay the bill when it breaks.
+
+This series is about running AI like an ops program, not a demo.
+
+What this part covers
+- The operating model you need before you scale AI
+- The roles you assign, so work does not drift
+- The metrics that keep you honest
+- The workflows that keep quality stable
+
+Who this is for
+You lead Support, Support Ops, CX Ops, or a Technical Support function.
+You own tooling, staffing, and outcomes.
+You want AI value without chaos.
+
+The problem
+AI changes three things at once.
+- Volume patterns shift, because deflection changes demand.
+- Quality risk rises, because outputs drift and teams over-trust.
+- Ownership gets fuzzy, because no one “owns” the AI backlog.
+
+Most failures are boring.
+- No single owner.
+- No change control.
+- No coaching loop.
+- No definition of done for “good” answers.
+
+The goal
+Run AI like a system.
+You want predictable outcomes:
+- Consistent answers
+- Controlled change
+- Clear escalation paths
+- Stable metrics week over week
+
+The AI ops operating model
+Use this model.
+1. Intake
+2. Triage
+3. Fix
+4. Approve
+5. Release
+6. Measure
+7. Coach
+8. Iterate
+
+1. Intake
+Every AI issue needs a home.
+Treat these as first-class work items:
+- Wrong answers
+- Missing coverage
+- Bad tone or unsafe outputs
+- Broken tools and integrations
+- Routing mistakes
+- Policy conflicts
+
+Create one intake path.
+Pick one:
+- A Zendesk form for internal AI issues
+- A Slack workflow that creates a ticket
+- A GitHub issue template if your docs and prompts live in code
+
+Minimum fields
+- Channel: chat, email, voice, help center
+- Issue type: wrong answer, missing answer, workflow bug, routing, policy
+- Severity: low, medium, high
+- Example: link or transcript snippet
+- Expected answer: what “right” looks like
+
+2. Triage
+Triage is about two decisions.
+- Is this a knowledge problem or a workflow problem?
+- Is this safe to ship without approval?
+
+Suggested triage buckets
+- Knowledge gap
+- Policy answer change
+- Workflow change
+- Tool or integration defect
+- Red zone or exclusion required
+- Needs more context
+
+Define your red zones
+Red zones are topics where you require a human.
+Examples:
+- Account access changes
+- Payments and refunds
+- Legal or compliance topics
+- Identity verification
+- Anything that exposes private data
+
+If your AI touches red zones, you need written rules.
+No exceptions.
+Trust dies fast.
+
+3. Fix
+Fix work should happen in the same place every time.
+If your system spans tools, keep one source of truth.
+Examples:
+- Knowledge lives in Mintlify
+- Prompts live in a prompt repo
+- Routing rules live in your AI platform
+- Zendesk fields and triggers live in Zendesk
+
+Fix checklist
+- Add or update the source content
+- Add examples, edge cases, and exclusions
+- Add a test prompt, plus expected output
+- Confirm the output aligns with policy
+
+4. Approve
+Approvals prevent silent regressions.
+
+Approval roles you need
+- Policy partner or program owner for policy answers
+- Support Ops for workflow and routing changes
+- Support leadership for red zones and exclusions
+- Engineering for tool changes and integrations
+
+Approval rules
+- Any policy answer change requires approval
+- Any routing or escalation change requires approval
+- Any red zone edit requires approval
+- Any integration change requires approval
+
+5. Release
+Release should be staged.
+Do not flip everything on.
+
+Release sequence
+- Internal only, support team uses it first
+- Small cohort of customers
+- Broader rollout by channel
+- Full rollout with monitoring
+
+Add release notes
+Keep a short log:
+- What changed
+- Why
+- Who approved
+- What metric you expect to move
+
+6. Measure
+If you do not measure, you are guessing.
+
+Core metrics
+- Containment rate by channel
+- Deflection rate for top intents
+- Escalation rate after AI interaction
+- CSAT and sentiment for AI handled conversations
+- Reopen rate or follow-up rate
+- Hallucination rate, tracked as confirmed wrong answers
+- Time to fix for AI issues
+
+Minimum dashboards
+- Weekly AI performance summary
+- Top failing intents
+- Red zone attempts
+- Regression alerts for CSAT and containment
+
+7. Coach
+Coaching is the difference between rollout and adoption.
+
+You need two coaching loops.
+- Support agents, when AI hands off or misroutes
+- AI owners, when failures repeat
+
+Coaching format
+- Weekly 30-minute calibration
+- Review 5 good interactions
+- Review 5 failures
+- Capture changes as backlog items
+
+8. Iterate
+Iteration is the whole point.
+Your backlog should always have:
+- Coverage expansion for high-volume intents
+- Quality fixes for known failure modes
+- Tooling fixes for handoff and routing
+- Content improvements in your docs
+
+Roles and ownership
+Assign these. Put names next to them.
+
+AI program owner
+- Owns roadmap, backlog, and outcomes
+- Runs weekly review
+- Owns release decision
+
+Knowledge owner
+- Owns source content quality
+- Owns content standards
+- Coordinates translations and updates
+
+Workflow owner
+- Owns routing, triggers, and escalation paths
+- Owns integration requirements
+- Owns QA for workflows
+
+QA owner
+- Defines scoring
+- Runs calibrations
+- Tracks regressions
+
+Policy partner
+- Owns policy correctness
+- Approves policy answer changes
+- Defines exclusions and safe language
+
+If one person owns all of this, you have a bottleneck.
+If no one owns it, you have chaos.
+
+What to do this week
+If you want progress in seven days, do this.
+- Write your red zones in one page
+- Pick one intake path and one backlog
+- Add triage buckets and severity rules
+- Schedule a weekly calibration
+- Create a release checklist
+- Pick five metrics and report them weekly
+
+Next in Part 2
+How to design your intake and triage system so your AI backlog stays small.
+Plus templates for:
+- Issue intake
+- Triage categories
+- Release notes
+- Weekly review agenda
