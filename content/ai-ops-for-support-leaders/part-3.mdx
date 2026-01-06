@@ -1,0 +1,127 @@
+---
+title: AI Ops for Support Leaders, Part 3
+description: Metrics, alerts, and weekly review that keep quality stable.
+---
+
+Part 3 covers measurement and review.
+
+Goal
+Detect drift early.
+Fix root causes.
+Protect user trust.
+
+Three metric tiers
+Tier 1, outcomes
+1) Containment rate
+2) Escalation rate after bot interaction
+3) CSAT for bot-handled conversations
+4) Follow-up rate within 24 hours
+
+Tier 2, quality signals
+1) Confirmed wrong answer rate
+2) Policy mismatch rate
+3) Handoff failure rate
+4) Tone defect rate
+
+Tier 3, operations
+1) Time to detect
+2) Time to triage
+3) Time to fix
+4) Backlog age by severity
+
+Definitions
+Containment rate
+Bot conversations with no human agent involvement divided by total bot conversations.
+
+Escalation rate after bot interaction
+Conversations with bot plus later human involvement divided by total bot conversations.
+
+Follow-up rate
+Users who return with the same goal within 24 hours divided by total bot conversations.
+
+Confirmed wrong answer rate
+Count of validated wrong answers divided by sampled conversations for the week.
+
+Pick a sampling plan
+Avoid random vibes.
+Use a repeatable method.
+
+Weekly sample
+1) Top 5 intents by volume
+2) Top 5 intents by escalations
+3) Red zone attempts
+4) New or changed flows
+
+For each group, review 10 conversations.
+Total: 30 to 50 per week.
+
+Scoring rubric
+Score each conversation on five checks.
+1) Accuracy
+2) Completeness
+3) Policy alignment
+4) Safety and red zone handling
+5) Next step clarity
+
+Use a simple scale
+0 Fail
+1 Partial
+2 Pass
+
+A weekly review agenda
+Keep the meeting short.
+Thirty minutes works.
+
+Agenda
+1) Last week numbers
+2) Biggest regressions
+3) Top three fixes shipped
+4) Top three failures still open
+5) Red zone attempts
+6) Decisions and owners
+
+Outputs
+1) Three backlog items with severity
+2) One content update batch
+3) One workflow change batch
+4) One monitoring rule update
+
+Alerts
+Set alerts for changes, not absolute values.
+
+Alert examples
+1) Containment drop by 10 percent week over week
+2) CSAT drop by 5 points week over week
+3) Escalation spike on a single intent
+4) Red zone attempts spike
+5) Wrong answer rate above threshold
+
+Thresholds
+Start conservative.
+Adjust after four weeks of baseline data.
+
+Weekly report format
+Use one page.
+
+Section 1, Summary
+1) Wins
+2) Risks
+3) Decisions
+
+Section 2, Metrics
+1) Containment
+2) Escalations
+3) CSAT
+4) Follow-ups
+5) Wrong answers
+
+Section 3, Top issues
+List five.
+Each line includes owner and due date.
+
+Section 4, Fixes shipped
+List five.
+Each line includes what changed and what metric to watch.
+
+Section 5, Next week focus
+List three.

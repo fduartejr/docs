@@ -1,0 +1,146 @@
+---
+title: AI Ops for Support Leaders, Part 6
+description: Tooling and architecture for a stable AI program.
+---
+
+If your system has five sources of truth, you will ship contradictions.
+Part 6 focuses on architecture.
+Keep the system simple.
+Keep change control real.
+
+The goal
+- One source for content.
+- One source for routing rules.
+- One source for prompts and tool instructions.
+- One place for metrics.
+- One path for releases.
+
+Pick your source of truth
+Choose one primary home for user-facing knowledge.
+Examples:
+- Mintlify for docs-as-code
+- Zendesk Guide for support portal content
+
+Rule
+Do not maintain the same article in two places.
+If you must mirror, automate the mirror.
+
+Structure your content
+AI works better when content is structured.
+Use this pattern for key topics.
+- Summary
+- Eligibility and rules
+- Steps
+- Edge cases
+- What to do if stuck
+- Escalation path
+
+Add decision points
+Write rules in a way that maps to user decisions.
+Bad
+“Submit proof of residency.”
+Good
+“If your address changed in the last 30 days, submit X. If not, submit Y.”
+
+Use reusable snippets
+Repeat content creates drift.
+Create snippets for:
+- Identity steps
+- Policy disclaimers
+- Red zone refusals
+- Contact options
+
+Use one taxonomy
+Make intent and content align.
+If your top intent is “Proof of Residency,” your docs should have the same phrase.
+
+Minimum metadata
+Add a small set of tags in your own process, even if the tool does not enforce it.
+- State or program
+- Audience type
+- Channel
+- Risk level
+- Last reviewed date
+
+Environments
+Run two environments.
+- Staging
+- Production
+
+Stage changes in staging first.
+Test the page.
+Test the prompt.
+Test the routing.
+
+Change control
+Log every change.
+Track:
+- What changed
+- Why
+- Owner
+- Approver
+- Release stage
+- Metric to watch
+
+If your AI platform supports versioning, use it.
+If not, keep a change log in the repo.
+
+Integrations
+Keep tool actions narrow.
+Bot actions should:
+- Read data
+- Create tickets
+- Collect context
+
+Avoid high-risk actions in early stages.
+Example: account changes.
+Keep those for humans.
+
+Routing rules
+Keep rules explicit.
+- Route by program, brand, or state
+- Route by issue type
+- Route by risk
+
+Avoid rules based on vibes.
+Avoid rules based on text match alone.
+Use intent plus a confirm step when risk exists.
+
+Analytics design
+Decide what you measure before you scale.
+Minimum data points per conversation:
+- Channel
+- Intent
+- Contained or escalated
+- Escalation reason
+- Red zone triggered
+- User rating, if available
+
+Store the intent in your ticket system
+Put the AI intent in a ticket field.
+Report from the ticket system.
+Keep one reporting layer.
+
+Common architecture patterns
+Pattern A
+- Mintlify for content
+- AI platform for orchestration
+- Zendesk for tickets and reporting
+
+Pattern B
+- Zendesk Guide for content
+- AI platform for orchestration
+- Zendesk for tickets and reporting
+
+Pick one and commit to it.
+
+What to do next
+- Decide your single content home
+- Define staging and production
+- Add a change log
+- Store intent in Zendesk ticket fields
+- Align taxonomy across bot, tickets, and docs
+
+Part 7 preview
+Risk and incident response.
+Kill switches, postmortems, and ongoing governance.

@@ -1,0 +1,115 @@
+---
+title: AI Ops for Support Leaders, Part 4
+description: Release management for safe changes and stable outcomes.
+---
+
+Part 4 covers release management.
+
+Goal
+Ship changes without regressions.
+Keep approvals clear.
+Keep rollout controlled.
+
+Why releases fail
+1) No approval path.
+2) No staged rollout.
+3) No rollback plan.
+4) No monitoring plan.
+
+Change types
+1) Content change
+Docs, KB, translations, examples.
+2) Prompt change
+System prompt, intent rules, tool instructions.
+3) Workflow change
+Routing, tags, forms, triggers, escalation paths.
+4) Tool change
+Integrations, actions, auth, API behavior.
+5) Red zone change
+Exclusions, refusals, handoff rules.
+
+Approval gates
+Use a simple matrix.
+
+Content change
+Owner: Knowledge
+Approver: Program owner or Support leadership
+Reviewer: QA
+
+Policy answer change
+Owner: Policy partner
+Approver: Program owner
+Reviewer: QA
+
+Workflow change
+Owner: Support Ops
+Approver: Support leadership
+Reviewer: QA plus Engineering for routing logic
+
+Prompt change
+Owner: Tool owner
+Approver: Support Ops
+Reviewer: QA
+
+Tool change
+Owner: Engineering
+Approver: Support Ops
+Reviewer: QA
+
+Red zone change
+Owner: Support leadership
+Approver: Exec sponsor for high-risk areas
+Reviewer: QA plus Policy partner
+
+Release stages
+Stage 0
+Internal only, support team uses the flow.
+Stage 1
+Small customer cohort.
+Stage 2
+One channel rollout.
+Stage 3
+All channels.
+
+Release checklist
+Before release
+1) Owner assigned
+2) Approval logged
+3) Test prompts written
+4) Expected behavior stated
+5) Monitoring metrics listed
+6) Rollback plan written
+
+During release
+1) Monitor the chosen metrics
+2) Review 10 conversations from the new flow
+3) Log defects fast
+
+After release
+1) Weekly review includes the change
+2) Confirm metric movement
+3) Close the change ticket
+
+Release notes template
+Title
+Change type
+Owner
+Approver
+Reviewer
+What changed
+Why
+Expected metric impact
+Monitoring plan
+Rollback plan
+Date and stage
+
+Rollback plan
+Write one simple step.
+Example: revert prompt to prior version.
+Example: disable routing rule.
+Example: remove the new page from live nav.
+
+What to do next
+- Add Parts 2 to 7 content
+- Add them to navigation once, in one clean edit
+- Commit and push

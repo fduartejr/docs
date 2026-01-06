@@ -1,0 +1,160 @@
+---
+title: AI Ops for Support Leaders, Part 7
+description: Risk, incident response, and governance that protect trust.
+---
+
+AI incidents happen.
+Most teams fail the response, not the model.
+
+Part 7 focuses on risk control.
+You need clear rules, fast shutdown paths, and a post-incident loop.
+
+The goal
+- Detect issues fast.
+- Stop harm fast.
+- Fix root cause.
+- Prevent repeats.
+
+Define risk levels
+Use three levels.
+
+High risk
+- Identity
+- Account access
+- Payments
+- Legal or compliance topics
+- Private data exposure
+
+Medium risk
+- Policy guidance with real consequences
+- Routing to the wrong team
+- Wrong steps that block completion
+
+Low risk
+- Tone issues
+- Formatting issues
+- Minor gaps with safe fallbacks
+
+Add a kill switch
+You need a shutdown path for each channel.
+Examples:
+- Disable bot replies
+- Disable tool actions
+- Force handoff on all intents
+- Disable a single flow or intent
+
+Write the rule
+Who triggers the kill switch.
+What qualifies.
+Who approves after the fact.
+
+Incident detection
+Use signals you already track.
+- Spike in escalations
+- Spike in repeats
+- Drop in CSAT
+- Spike in red zone attempts
+- Increase in confirmed wrong answers
+
+Add a manual signal
+Agents need a fast flag.
+One click.
+One tag.
+One queue.
+
+Incident response roles
+Assign these roles in advance.
+
+Incident lead
+- Runs the response
+- Owns comms
+- Owns the timeline
+
+Fix owner
+- Ships the fix
+- Documents the change
+
+QA owner
+- Validates behavior
+- Confirms regression tests
+
+Policy partner
+- Confirms language
+- Confirms exclusions
+
+Support comms owner
+- Updates macros and templates
+- Updates the status page text, if you use one
+
+Incident flow
+1) Detect
+2) Triage severity
+3) Decide on kill switch
+4) Contain
+5) Fix
+6) Validate
+7) Release
+8) Monitor
+9) Close
+
+Containment actions
+Pick the safest option first.
+- Force handoff
+- Remove a risky answer
+- Add a refusal and safe next step
+- Add a confirm step before risky guidance
+
+Post-incident review
+Run a short postmortem within 72 hours.
+
+Postmortem format
+- What happened
+- User impact
+- Root cause
+- What worked
+- What failed
+- Fixes shipped
+- Preventive actions
+- Owners and due dates
+
+Prevention
+Add one preventive action per incident.
+Examples:
+- Add a monitoring rule
+- Add a regression test prompt
+- Add a red zone exclusion
+- Add a content standard
+- Add an approval gate
+
+Ongoing governance
+Run a weekly review.
+Run a monthly risk review.
+
+Weekly review
+- Metrics
+- Top failures
+- Fixes shipped
+- Release plan
+- Red zone attempts
+
+Monthly risk review
+- Review red zones
+- Review incident log
+- Review approval compliance
+- Review new tool actions
+- Review audit trail
+
+Series wrap
+If you want AI to scale, run it like ops.
+- Clear ownership
+- Controlled change
+- Measured outcomes
+- Real enablement
+- Real incident response
+
+What to do next
+- Write your kill switch rules
+- Assign incident roles
+- Add monitoring alerts
+- Build a postmortem template
+- Run the first monthly risk review

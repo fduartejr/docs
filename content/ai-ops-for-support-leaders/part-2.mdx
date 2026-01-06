@@ -1,0 +1,174 @@
+---
+title: AI Ops for Support Leaders, Part 2
+description: Intake and triage system that keeps the AI backlog small.
+---
+
+Part 1 covered the operating model.
+Part 2 covers intake and triage.
+
+Goal
+One path for every failure.
+One set of labels.
+One backlog.
+Fast sorting.
+Fast fixes.
+
+What breaks in real teams
+1) Feedback lands in ten places.
+2) Labels vary by person.
+3) No severity standard.
+4) Same failure repeats for weeks.
+
+Build one intake path
+Pick one primary intake path.
+A Zendesk form works well for Support orgs.
+A GitHub issue template works well for docs-as-code teams.
+A Slack workflow works well for speed, plus auto-ticket creation.
+
+Lock the rule
+All AI issues route into the same backlog.
+No side chats.
+No private spreadsheets.
+
+Minimum fields
+1) Channel
+Options: chat, voice, email, help center
+2) Surface
+Options: bot answer, bot handoff, routing, tool action, content
+3) Issue type
+Options:
+- Wrong answer
+- Missing answer
+- Policy mismatch
+- Routing mistake
+- Tool failure
+- Tone problem
+- Language or translation issue
+- Data issue, tagging, fields, analytics
+4) Severity
+Options: S1, S2, S3
+5) Evidence
+Link to ticket, transcript, or screenshot
+6) Expected result
+One paragraph describing a correct result
+7) Owner group
+Options: Knowledge, Support Ops, Engineering, Policy
+
+Severity rubric
+S1
+Risk, compliance, privacy, identity, payments, account access.
+Also: high-volume failure affecting many users per day.
+Response target: same day.
+
+S2
+Wrong guidance without direct risk.
+Broken routing to wrong team.
+Tool failures with workarounds.
+Response target: 48 hours.
+
+S3
+Quality polish.
+Low volume.
+Edge cases.
+Response target: next sprint.
+
+Triage labels
+Triage needs fast routing, not debate.
+
+Label set
+1) Knowledge gap
+Source content missing, outdated, unclear.
+2) Policy answer change
+Policy shifted, new rule, new language required.
+3) Workflow change
+Routing, tags, forms, triggers, escalation logic.
+4) Tool defect
+API, integration, auth, action errors.
+5) Red zone rule
+Topic needs human handling or stricter refusal.
+6) Needs context
+Evidence incomplete, user goal unclear.
+
+Triage flow
+Run this in order.
+1) Confirm severity using rubric.
+2) Assign issue type.
+3) Assign triage label.
+4) Assign owner group.
+5) Add one action note.
+Example: “Update KB article X, add edge case Y, add refusal for scenario Z.”
+
+Red zones and exclusions
+Write red zones as a short list.
+Keep red zones narrow and explicit.
+
+Examples
+1) Account access change
+2) Identity verification
+3) Payment status
+4) Refund approval
+5) Legal interpretation
+
+Rule
+If red zone triggered, handoff to human or refusal plus safe next step.
+
+Failure pattern library
+Track common patterns.
+Use one sentence per pattern.
+
+Examples
+1) Partial user context, bot guesses.
+2) Policy conflict across programs, bot merges rules.
+3) Form mismatch, bot routes by wrong field.
+4) Tool action fails, bot replies with fake success.
+
+Each pattern gets a fix playbook
+1) Content change
+2) Prompt or tool change
+3) Routing change
+4) Monitoring rule
+
+Templates
+
+Template A, Issue intake
+Title
+AI issue, short label, channel, issue type
+
+Fields
+Channel:
+Surface:
+Issue type:
+Severity:
+Owner group:
+Evidence:
+Expected result:
+Notes:
+
+Template B, Triage decision
+Severity:
+Triage label:
+Owner:
+Fix type:
+- Content edit
+- Prompt edit
+- Routing edit
+- Tool fix
+Approval required:
+- Yes
+- No
+
+Template C, Definition of done
+1) Source updated or rule updated
+2) Test prompt added
+3) Output reviewed
+4) Rollout plan set
+5) Metrics to watch listed
+
+What to do next
+Build the intake form.
+Lock the labels.
+Run triage twice per week.
+Ship small fixes weekly.
+
+Next in Part 3
+Metrics, alerts, weekly review, and a simple governance cadence.
